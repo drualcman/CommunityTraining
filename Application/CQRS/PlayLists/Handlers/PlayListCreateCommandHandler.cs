@@ -11,19 +11,22 @@ using System.Threading.Tasks;
 
 namespace CommunityTraining.CQRS.PlayLists.Handlers
 {
-    public class PlayListCreateCommandHandler : IRequestHandler<PlayListCreateCommand, int>
+    public class PlayListCreateCommandHandler : IRequestHandler<PlayListCreateCommand>
     {
         readonly IPlayListAddContext<PlayList> Context;
         public PlayListCreateCommandHandler(IPlayListAddContext<Entities.PlayList> context) => Context = context;
 
-        public Task<int> Handle(PlayListCreateCommand command, CancellationToken cancellationToken) =>
-            Context.Add(new PlayList 
-            { 
+        public Task<Unit> Handle(PlayListCreateCommand command, CancellationToken cancellationToken)
+        {
+            Context.Add(new PlayList
+            {
                 Url = command.Url,
                 Title = command.Title,
                 Description = command.Description,
                 Conferencer = command.Conferencer,
                 Ownner = command.Ownner
             });
+            return Unit.Task;
+        }
     }
 }

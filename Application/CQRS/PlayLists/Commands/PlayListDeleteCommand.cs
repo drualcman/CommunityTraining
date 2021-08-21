@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommunityTraining.CQRS.PlayLists.Commands
 {
-    public class PlayListDeleteCommand : IRequest<bool>
+    public class PlayListDeleteCommand : IRequest
     {
         public int Id { get; set; }
     }

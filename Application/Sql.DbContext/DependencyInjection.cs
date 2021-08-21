@@ -21,7 +21,7 @@ namespace CommunityTraining.Sql.EF
             //add interfaces to manage the inverse injection
             services.AddScoped(typeof(IPlayListAddContext<>), typeof(RepositoryEF<>));
             services.AddScoped(typeof(IPlayListUpdateContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IPlayListDeleteContext), typeof(RepositoryEF<>));
+            services.AddScoped(typeof(IPlayListDeleteContext<>), typeof(RepositoryEF<>));
             services.AddScoped(typeof(IPlayListGetAllContext<>), typeof(RepositoryEF<>));
             services.AddScoped(typeof(IPlayListGetContext<>), typeof(RepositoryEF<>));
         }

@@ -1,5 +1,6 @@
 ﻿using CommunityTraining.Entities;
 using CommunityTraining.Interfaces.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace CommunityTraining.Sql.EF
     public class RepositoryEF<TEntity>  : 
             IPlayListAddContext<TEntity> , 
             IPlayListUpdateContext<TEntity>, 
-            IPlayListDeleteContext,
+            IPlayListDeleteContext<TEntity>,
             IPlayListGetAllContext<TEntity>, 
             IPlayListGetContext<TEntity> 
         where TEntity : class
@@ -21,31 +22,30 @@ namespace CommunityTraining.Sql.EF
             Context = context;
         }
 
-        public Task<int> Add(TEntity entity)
+        public async Task Add(TEntity entity)
         {
-            return Task.FromResult(0);
+            await Context.Set<TEntity>().AddAsync(entity);
+            await Context.SaveChangesAsync();
         }
 
-        public Task<bool> Delete(int id)
+        public async Task Delete(int id)
         {
-            return Task.FromResult(false);
+            TEntity data = await Context.Set<TEntity>().FindAsync(id);
+            Context.Set<TEntity>().Remove(data);
+            await Context.SaveChangesAsync();
         }
 
-        public Task<TEntity> Get(int id)
-        {
-            TEntity data = default;
-            return Task.FromResult(data);
-        }
+        public async Task<TEntity> Get(int id) => 
+            await Context.Set<TEntity>().FindAsync(id);
 
-        public Task<IEnumerable<TEntity>> GetAll()
-        {
-            List<TEntity> result = new List<TEntity>();
-            return Task.FromResult(result.AsEnumerable());
-        }
+        public async Task<IEnumerable<TEntity>> GetAll() =>
+            await Context.Set<TEntity>().Select(a=>a).ToListAsync();
 
-        public Task<bool> Update(TEntity entity)
+        public async Task Update(TEntity data)
         {
-            return Task.FromResult(false);
+            Context.Attach(data);
+            Context.Entry(data).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
         }
     }
 }

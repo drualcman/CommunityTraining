@@ -8,6 +8,6 @@ namespace CommunityTraining.Interfaces.Context
 {
     public interface IPlayListUpdateContext<TEntity>
     {
-        Task<bool> Update(TEntity entity);
+        Task Update(TEntity entity);
     }
 }

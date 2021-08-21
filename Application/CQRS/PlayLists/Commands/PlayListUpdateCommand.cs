@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace CommunityTraining.CQRS.PlayLists.Commands
 {
-    public class PlayListUpdateCommand : Entities.PlayList, IRequest<bool> { }
+    public class PlayListUpdateCommand : Entities.PlayList, IRequest { }
 }

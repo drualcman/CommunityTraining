@@ -1,5 +1,8 @@
-﻿using CommunityTraining.Entities;
+﻿using CommunityTraining.CQRS.PlayLists.Commands;
+using CommunityTraining.CQRS.PlayLists.Queries;
+using CommunityTraining.Entities;
 using CommunityTraining.Interfaces.Context;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,47 +16,47 @@ namespace CommunityTraining.Api.Controllers
     [ApiController]
     public class PlaylistController : ControllerBase
     {
-        private readonly IPlayListAddContext<PlayList> AddContext;
-        private readonly IPlayListUpdateContext<PlayList> UpdateContext;
-        private readonly IPlayListDeleteContext DeleteContext;
-        private readonly IPlayListGetAllContext<PlayList> GetAllContext;
-        private readonly IPlayListGetContext<PlayList> GetContext;
+        private readonly IMediator Mediator;
 
-        public PlaylistController(
-            IPlayListAddContext<PlayList> addContext,
-            IPlayListUpdateContext<PlayList> updateContext,
-            IPlayListDeleteContext deleteContext,
-            IPlayListGetAllContext<PlayList> getAllContext,
-            IPlayListGetContext<PlayList> getContext)
+        public PlaylistController(IMediator mediator)
         {
-            AddContext = addContext;
-            UpdateContext = updateContext;
-            DeleteContext = deleteContext;
-            GetAllContext = getAllContext;
-            GetContext = getContext;
+            Mediator = mediator;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll() =>
-            Ok(await GetAllContext.GetAll());
-
+            Ok(await Mediator.Send(new PlayListGetAllQuery()));
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id) =>
-            Ok(await GetContext.Get(id));
-
+            Ok(await Mediator.Send(new PlayListGetQuery() { Id = id }));
 
         [HttpPost]
         public async Task<IActionResult> Add(PlayList video) =>
-            Ok(await AddContext.Add(video));
+            Ok(await Mediator.Send(new PlayListCreateCommand() 
+            { 
+                Url = video.Url,
+                Title = video.Title,
+                Description = video.Description,
+                Conferencer = video.Conferencer,
+                Ownner = video.Ownner
+            }));
 
         [HttpPut]
         public async Task<IActionResult> Update(PlayList video) =>
-            Ok(await UpdateContext.Update(video));
+            Ok(await Mediator.Send(new PlayListUpdateCommand()
+            {
+                Id = video.Id,
+                Url = video.Url,
+                Title = video.Title,
+                Description = video.Description,
+                Conferencer = video.Conferencer,
+                Ownner = video.Ownner
+            }));
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id) =>
-            Ok(await DeleteContext.Delete(id));
+            Ok(await Mediator.Send(new PlayListDeleteCommand() { Id = id }));
 
     }
 }

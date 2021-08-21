@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{DEE4B7AE-75A3-4B77-AB5C-81E63FBD9DF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Sql.DbContext", "Application\Sql.DbContext\CommunityTraining.Sql.DbContext.csproj", "{791973B7-3C9C-4A02-AD41-0961355C0433}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Sql.EF", "Application\Sql.DbContext\CommunityTraining.Sql.EF.csproj", "{791973B7-3C9C-4A02-AD41-0961355C0433}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Interfaces", "Domain\Interfaces\CommunityTraining.Interfaces.csproj", "{2B78198A-8E88-4AEB-867A-0C4B9A30459D}"
 EndProject

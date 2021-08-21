@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Entities\CommunityTraining.Entities.csproj" />
+    <ProjectReference Include="..\..\Domain\Interfaces\CommunityTraining.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

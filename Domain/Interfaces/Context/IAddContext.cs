@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace CommunityTraining.Interfaces.Context
 {
-    public interface IPlayListAddContext<TEntity>
+    public interface IAddContext<TEntity>
     {
         Task Add(TEntity entity);
     }

@@ -13,8 +13,8 @@ namespace CommunityTraining.CQRS.PlayLists.Handlers
 {
     public class PlayListDeleteCommandHandler : IRequestHandler<PlayListDeleteCommand>
     {
-        readonly IPlayListDeleteContext<PlayList> Context;
-        public PlayListDeleteCommandHandler(IPlayListDeleteContext<PlayList> context) => Context = context;
+        readonly IDeleteContext<PlayList> Context;
+        public PlayListDeleteCommandHandler(IDeleteContext<PlayList> context) => Context = context;
 
         public Task<Unit> Handle(PlayListDeleteCommand command, CancellationToken cancellationToken)
         {

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CommunityTraining.Interfaces.Context
 {
-    public interface IPlayListGetContext<TEntity>
+    public interface IDeleteContext<TEntity>
     {
-        Task<TEntity> Get(int id);
+        Task Delete(int id);
     }
 }

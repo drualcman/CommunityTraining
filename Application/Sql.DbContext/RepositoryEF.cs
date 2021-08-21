@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 namespace CommunityTraining.Sql.EF
 {
     public class RepositoryEF<TEntity>  : 
-            IPlayListAddContext<TEntity> , 
-            IPlayListUpdateContext<TEntity>, 
-            IPlayListDeleteContext<TEntity>,
-            IPlayListGetAllContext<TEntity>, 
-            IPlayListGetContext<TEntity> 
+            IAddContext<TEntity> , 
+            IUpdateContext<TEntity>, 
+            IDeleteContext<TEntity>,
+            IGetAllContext<TEntity>, 
+            IGetContext<TEntity> 
         where TEntity : class
     {
         private readonly PlayListDbContext Context;

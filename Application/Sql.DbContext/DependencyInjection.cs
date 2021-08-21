@@ -19,11 +19,11 @@ namespace CommunityTraining.Sql.EF
             services.AddDbContext<PlayListDbContext>(options => 
                 options.UseSqlServer(configuration.GetConnectionString("Default")));
             //add interfaces to manage the inverse injection
-            services.AddScoped(typeof(IPlayListAddContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IPlayListUpdateContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IPlayListDeleteContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IPlayListGetAllContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IPlayListGetContext<>), typeof(RepositoryEF<>));
+            services.AddScoped(typeof(IAddContext<>), typeof(RepositoryEF<>));
+            services.AddScoped(typeof(IUpdateContext<>), typeof(RepositoryEF<>));
+            services.AddScoped(typeof(IDeleteContext<>), typeof(RepositoryEF<>));
+            services.AddScoped(typeof(IGetAllContext<>), typeof(RepositoryEF<>));
+            services.AddScoped(typeof(IGetContext<>), typeof(RepositoryEF<>));
         }
     }
 }

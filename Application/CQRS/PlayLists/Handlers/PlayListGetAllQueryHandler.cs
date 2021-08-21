@@ -13,8 +13,8 @@ namespace CommunityTraining.CQRS.PlayLists.Handlers
 {
     public class PlayListGetAllQueryHandler : IRequestHandler<PlayListGetAllQuery, IEnumerable<PlayList>>
     {
-        readonly IPlayListGetAllContext<PlayList> Context;
-        public PlayListGetAllQueryHandler(IPlayListGetAllContext<PlayList> context) => Context = context;
+        readonly IGetAllContext<PlayList> Context;
+        public PlayListGetAllQueryHandler(IGetAllContext<PlayList> context) => Context = context;
         public Task<IEnumerable<PlayList>> Handle(PlayListGetAllQuery command, CancellationToken cancellationToken) =>
             Context.GetAll();
     }

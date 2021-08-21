@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommunityTraining.Interfaces.Context
 {
-    public interface IPlayListGetAllContext<TEntity>
+    public interface IGetAllContext<TEntity>
     {
         Task<IEnumerable<TEntity>> GetAll();
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommunityTraining.Interfaces.Context
 {
-    public interface IPlayListUpdateContext<TEntity>
+    public interface IUpdateContext<TEntity>
     {
         Task Update(TEntity entity);
     }

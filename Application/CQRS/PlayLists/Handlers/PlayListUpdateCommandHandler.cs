@@ -12,8 +12,8 @@ namespace CommunityTraining.CQRS.PlayLists.Handlers
 {
     public class PlayListUpdateCommandHandler : IRequestHandler<PlayListUpdateCommand>
     {
-        readonly IPlayListUpdateContext<PlayListUpdateCommand> Context;
-        public PlayListUpdateCommandHandler(IPlayListUpdateContext<PlayListUpdateCommand> context) => Context = context;
+        readonly IUpdateContext<PlayListUpdateCommand> Context;
+        public PlayListUpdateCommandHandler(IUpdateContext<PlayListUpdateCommand> context) => Context = context;
 
         public Task<Unit> Handle(PlayListUpdateCommand command, CancellationToken cancellationToken)
         {

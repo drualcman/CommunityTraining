@@ -14,4 +14,8 @@
     <ProjectReference Include="..\..\Domain\Entities\CommunityTraining.Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>

@@ -1,37 +1,44 @@
 ﻿@page "/"
 
-
-@if (ShowVideo)
-{
-    <YoutubePlayer PlayerId="player" VideoId="@Playing" @ref="Reproductor" />
-    <button class="btn btn-warning" type="button" @onclick="Cerrar">Cerrar</button>
-}
-else
-{
-    <div>
-        <a class="btn btn-info" href="/video">Agregar Video</a>
-        
-        @if (ListaReproduccion is null)
-        {
-            <p>Cargando...</p>
-        }
-        else
-        {
-            foreach (PlayList item in ListaReproduccion)
-            {
-                <div class="row">
-                    <div class="col">
-                        <h3>@item.Title</h3>
-                        <p>@item.Description</p>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-warning" type="button" @onclick="() => PlayVideo(item.Id)">Reproducir</button>
-                        <button type="button" class="btn btn-warning" @onclick="() => EditVideo(item.Id)">Editar</button>
-                        <button type="button" class="btn btn-danger" @onclick="() => DeleteVideo(item.Id)">Eliminar</button>
-                    </div>
-                </div>
-            }
-        }
+<div class="row align-items-center">    
+    <div class="col-sm">        
+        <div data-blazor="slide-right" blazoranimate="aos-animate">
+            <h1 class="title">
+                <b>Comunidad en línea amante de .NET</b>
+            </h1>
+            <p>
+                <span class="title-blazor"><b>Clean Architecture</b></span>
+            </p>
+            <p class="subtitle">
+                <span><i><b>Blazor WebAssembly</b></i></span>
+            </p>
+            
+        </div>
+        <div class="home-text" data-blazor="zoom-in" blazoranimate="aos-animate">
+            <p>
+                Aprende a desarrollar aplicaciones web interactivas del lado del
+                cliente utilizando <b style="color:rgb(197,21,21)"><i>HTML + CSS + C#</i></b> con <b><i>Blazor WebAssembly con .NET 5</i></b> 
+                y aplicanto una arquitectura limpia.
+            </p>
+            
+        </div>
+        <div class="home-text" data-blazor="slide-right" blazoranimate="aos-animate">
+            <p>
+                En estas reuniones discutimos y compartimos experiencias sobre <strong>.NET5 C#</strong> y todo lo que se puede hacer en este apasioniante mundo.
+            </p>
+        </div>
+        <div class="home-section-text" data-blazor="zoom-in" blazoranimate="aos-animate">
+            <p>
+                <span class="title-instructor">Moderador</span>
+                <a href="https://mvp.microsoft.com/es-es/PublicProfile/21053" target="_blank">
+                    Miguel Muñoz Serafín&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i>
+                </a><br>
+                Microsoft MVP - Developer Technologies&nbsp;<br>
+            </p>
+            
+        </div>
     </div>
-
-}
+    <div class="col-sm" data-blazor="fade-down-left" blazoranimate="aos-animate">
+        <img class="img-home img-fluid" src="images/blazorDevRedP450.png">
+    </div>
+</div>

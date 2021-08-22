@@ -1,17 +1,26 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    <NavMenu />
+
 
     <div class="main">
-        <div class="top-row px-4">
-            <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-        </div>
-
-        <div class="content px-4">
+        <div class="container" id="home">
             @Body
         </div>
     </div>
-</div>
+
+    <div class="container-fluid text-center w3-text-white footer">        
+        <span class="title-patrocinadopor">Patrocinado por:</span><br>
+        <div class="row align-items-center">            
+            <div class="col text-right">                
+                <div data-blazor="fade-down-right" blazoranimate="aos-animate">            
+                    <a href="http://dotnetpuebla.com" target="_blank"><img src="images/DotNetPueblaRed.png"></a>
+                </div>
+            </div>
+            <div class="col text-left">                
+                <div data-blazor="fade-down-left" blazoranimate="aos-animate">
+                    <a href="https://ticapacitacion.com" target="_blank"><img src="images/ti85x85.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>

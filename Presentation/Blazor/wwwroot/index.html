@@ -4,15 +4,69 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Community Training</title>
+    <title>Clean Architecture y Blazor Webassembly.NET 5 - Comunidad latina</title>
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type='text/css'>-->
+    <link href="css/fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="CommunityTraining.Blazor.styles.css" rel="stylesheet" />
+
+    <meta property="og:title" content="Clean Architecture y Blazor Webassembly.NET 5 - Comunidad latina.">
+    <meta property="og:description" content="Aprende a desarrollar aplicaciones web interactivas del lado del cliente utilizando una arquitectura limpia con HTML + CSS + C# con Blazor WebAssembly.">
+    <meta property="og:image" content="https://communitytraining.site/images/BlazorTraining.png">
+    <meta property="og:image:alt" content="Blazor WebAssembly .NET 5 - Clean Architecture - Comunidad latina">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:image:width" content="256">
+    <meta property="og:image:height" content="257">
+    <meta property="og:url" content="https://communitytraining.site/blazor">
+
+    <link rel="icon" href="images/BlazorTraining.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="images/BlazorTraining.png">
+    <link href="css/W3.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">
+        <div class="w3-top  nav-blazor @NavMenuCssClass" @onclick="ToggleNavMenu">
+            <div class="container-fluid">
+                <div class="w3-right w3-text-white">
+                    <span class="w3-bar-item w3-button nav-hover text-center">
+                        <i class="fas fa-home w3-xlarge"></i>
+                        <span class="menu-item">Inicio</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main">
+            <div class="container" id="home">
+                <div class="loading-dot">
+                    <img src="images/CubeBlazorVine500.png" alt="loading" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid text-center w3-text-white footer">
+            <span class="title-patrocinadopor">Patrocinado por:</span><br>
+            <div class="row align-items-center">
+                <div class="col text-right">
+                    <div data-blazor="fade-down-right" blazoranimate="aos-animate">
+                        <a href="http://dotnetpuebla.com" target="_blank"><img src="images/DotNetPueblaRed.png"></a>
+                    </div>
+                </div>
+                <div class="col text-left">
+                    <div data-blazor="fade-down-left" blazoranimate="aos-animate">
+                        <a href="https://ticapacitacion.com" target="_blank"><img src="images/ti85x85.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.

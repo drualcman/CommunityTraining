@@ -7,12 +7,5 @@ using System.Threading.Tasks;
 
 namespace CommunityTraining.CQRS.PlayLists.Commands
 {
-    public class PlayListCreateCommand : IRequest
-    {
-        public string Url { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Conferencer { get; set; }
-        public string Ownner { get; set; }
-    }
+    public class PlayListCreateCommand : Entities.PlayList, IRequest { }
 }

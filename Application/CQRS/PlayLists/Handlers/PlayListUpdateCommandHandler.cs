@@ -1,4 +1,5 @@
 ﻿using CommunityTraining.CQRS.PlayLists.Commands;
+using CommunityTraining.Entities;
 using CommunityTraining.Interfaces.Context;
 using MediatR;
 using System;
@@ -12,8 +13,8 @@ namespace CommunityTraining.CQRS.PlayLists.Handlers
 {
     public class PlayListUpdateCommandHandler : IRequestHandler<PlayListUpdateCommand>
     {
-        readonly IUpdateContext<PlayListUpdateCommand> Context;
-        public PlayListUpdateCommandHandler(IUpdateContext<PlayListUpdateCommand> context) => Context = context;
+        readonly IUpdateContext<PlayList> Context;
+        public PlayListUpdateCommandHandler(IUpdateContext<PlayList> context) => Context = context;
 
         public Task<Unit> Handle(PlayListUpdateCommand command, CancellationToken cancellationToken)
         {

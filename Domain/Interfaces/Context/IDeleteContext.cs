@@ -8,6 +8,6 @@ namespace CommunityTraining.Interfaces.Context
 {
     public interface IDeleteContext<TEntity>
     {
-        Task Delete(int id);
+        Task Delete(string id);
     }
 }

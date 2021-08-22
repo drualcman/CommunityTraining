@@ -14,18 +14,11 @@ namespace CommunityTraining.CQRS.PlayLists.Handlers
     public class PlayListCreateCommandHandler : IRequestHandler<PlayListCreateCommand>
     {
         readonly IAddContext<PlayList> Context;
-        public PlayListCreateCommandHandler(IAddContext<Entities.PlayList> context) => Context = context;
+        public PlayListCreateCommandHandler(IAddContext<PlayList> context) => Context = context;
 
         public Task<Unit> Handle(PlayListCreateCommand command, CancellationToken cancellationToken)
         {
-            Context.Add(new PlayList
-            {
-                Url = command.Url,
-                Title = command.Title,
-                Description = command.Description,
-                Conferencer = command.Conferencer,
-                Ownner = command.Ownner
-            });
+            Context.Add(command);
             return Unit.Task;
         }
     }

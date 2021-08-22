@@ -28,14 +28,14 @@ namespace CommunityTraining.Sql.EF
             await Context.SaveChangesAsync();
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(string id)
         {
             TEntity data = await Context.Set<TEntity>().FindAsync(id);
             Context.Set<TEntity>().Remove(data);
             await Context.SaveChangesAsync();
         }
 
-        public async Task<TEntity> Get(int id) => 
+        public async Task<TEntity> Get(string id) => 
             await Context.Set<TEntity>().FindAsync(id);
 
         public async Task<IEnumerable<TEntity>> GetAll() =>

@@ -8,6 +8,6 @@ namespace CommunityTraining.Interfaces.Context
 {
     public interface IGetContext<TEntity>
     {
-        Task<TEntity> Get(int id);
+        Task<TEntity> Get(string id);
     }
 }

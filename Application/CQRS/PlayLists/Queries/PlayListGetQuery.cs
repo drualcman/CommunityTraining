@@ -10,6 +10,6 @@ namespace CommunityTraining.CQRS.PlayLists.Queries
 {
     public class PlayListGetQuery : IRequest<PlayList>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
     }
 }

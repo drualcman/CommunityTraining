@@ -1,5 +1,22 @@
-﻿<h3>Video</h3>
+﻿@page "/video"
+@page "/video/{id}"
 
-@code {
+<h3>Video</h3>
 
+@if (VideoEdit is null)
+{
+    <p>Cargando...</p>
+}
+else
+{
+    <EditForm Model="VideoEdit" OnValidSubmit="Guardar" class="form-group">
+        <DataAnnotationsValidator />
+        <InputText class="form-control" placeholder="Url" @bind-Value="VideoEdit.Url" />
+        <InputText class="form-control" placeholder="Titulo" @bind-Value="VideoEdit.Title" />
+        <InputTextArea rows="10" cols="200" class="form-control" placeholder="Descripcion del video" @bind-Value="VideoEdit.Description" />
+        <InputText class="form-control" placeholder="Conferenciante" @bind-Value="VideoEdit.Conferencer" />
+        <button class="btn btn-primary">Guardar</button>
+        <button class="btn btn-secondary" type="button" @onclick="Cancel">Cancelar</button>
+        <ValidationSummary />
+    </EditForm>
 }

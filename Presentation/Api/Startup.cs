@@ -25,7 +25,7 @@ namespace CommunityTraining.Api
         {
             services.ConfigureEFLayer(Configuration);
             services.ConfigureCQRSLayer();
-            services.AddMediatR(typeof(PlayListCreateCommand));
+            services.AddMediatR(typeof(PlayListDeleteCommand));
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

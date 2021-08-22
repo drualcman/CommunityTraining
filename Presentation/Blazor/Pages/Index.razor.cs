@@ -19,10 +19,11 @@ namespace CommunityTraining.Blazor.Pages
         [Inject]
         public HttpClient ApiClient { get; set; }
 
-        protected YoutubePlayer Reproductor;
+        [Inject]
+        public NavigationManager Navigaton { get; set; }
+
+        protected YoutubePlayer Reproductor = new YoutubePlayer();
         public List<PlayList> ListaReproduccion;
-        public string UserName = "Gest";
-        public string Video;
         private bool Clicked;
 
         protected override async Task OnInitializedAsync()
@@ -33,20 +34,6 @@ namespace CommunityTraining.Blazor.Pages
         public async Task LoadList()
         {
             ListaReproduccion = await ApiClient.GetFromJsonAsync<List<PlayList>>("playlist");            
-        }
-
-        public async Task AddVideo()
-        {
-            if (!Clicked)
-            {
-                Clicked = true;
-                PlayList video = await Reproductor.AddToPlayListAsync(Video);
-                video.Ownner = UserName;
-                HttpResponseMessage responseMessage = await ApiClient.PostAsJsonAsync("playlist", video);
-                if (responseMessage.IsSuccessStatusCode) ListaReproduccion.Add(video);
-                else await JsRuntime.InvokeVoidAsync("alert", "No se ha podido agregar el video");
-                Clicked = false;
-            }
         }
 
         public async Task DeleteVideo(string id)
@@ -66,10 +53,22 @@ namespace CommunityTraining.Blazor.Pages
         }
 
         string Playing = "qeMFqkcPYcg";
-
-        void PlayVideo()
+        bool ShowVideo;
+        void PlayVideo(string Video)
         {
             Playing = Helpers.Video.ExtraerId(Video);
+            Reproductor.PlayVideo();
+            ShowVideo = true;
+        }
+        void EditVideo(string id)
+        {
+            Navigaton.NavigateTo($"video/{id}");
+        }
+
+        void Cerrar()
+        {
+            ShowVideo = false;
+            Reproductor.StopVideo();
         }
     }
 }

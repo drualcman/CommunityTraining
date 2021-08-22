@@ -1,3 +1,40 @@
 ﻿@page "/favorites"
 
-<h3>Favorites</h3>
+<h3>Mis videos favoritos</h3>
+
+@if (IsShowingDetail)
+{
+    <EditForm Model="VideoEdit" OnValidSubmit="Guardar" class="form-group">
+        <VideoEditor VideoEdit="VideoEdit" />
+        <button class="btn btn-primary">Guardar</button>
+        <button class="btn btn-secondary" type="button" @onclick="() => IsShowingDetail = false">Cancelar</button>
+    </EditForm>
+}
+else
+{
+    <div>
+        @if (ListaFavorita is null)
+        {
+            <div class="loading-dot">
+                <img src="images/CubeBlazorVine500.png" alt="loading" />
+            </div>
+        }
+        else
+        {
+            foreach (PlayList item in ListaFavorita)
+            {
+                <div class="row">
+                    <div class="col">
+                        <h3>@item.Title</h3>
+                        <p>@item.Description</p>
+                    </div>
+                    <div class="col-3">
+                        <a class="btn btn-success" href="play/@item.Id"><i class="far fa-play-circle"></i></a>
+                        <button type="button" class="btn btn-warning" @onclick="() => EditVideo(item.Id)"><i class="far fa-edit"></i></button>
+                        <button type="button" class="btn btn-danger" @onclick="() => DeleteVideo(item.Id)"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+}

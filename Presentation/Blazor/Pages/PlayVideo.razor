@@ -1,0 +1,15 @@
+﻿@page "/play/{id}"
+
+@if (Playing is not null)
+{
+    <h3>@Playing.Title</h3>
+
+    <YoutubePlayer PlayerId="player" VideoId="@Id" @ref="Reproductor" />
+    <button class="btn btn-warning" type="button" @onclick="Cerrar">Cerrar</button>
+}
+else
+{
+    <div class="loading-dot">
+        <img src="images/CubeBlazorVine500.png" alt="loading" />
+    </div>
+}

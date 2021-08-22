@@ -1,4 +1,5 @@
-﻿using CommunityTraining.Blazor.Shared;
+﻿using CommunityTraining.Blazor.Services;
+using CommunityTraining.Blazor.Shared;
 using CommunityTraining.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
@@ -22,8 +23,11 @@ namespace CommunityTraining.Blazor.Pages
         [Inject]
         public NavigationManager Navigaton { get; set; }
 
-        protected YoutubePlayer Reproductor = new YoutubePlayer();
+        [Inject]
+        public FavoritesContext FavContext { get; set; }
+
         public List<PlayList> ListaReproduccion;
+        public List<PlayList> ListaFavorita;
         private bool Clicked;
 
         protected override async Task OnInitializedAsync()
@@ -34,6 +38,7 @@ namespace CommunityTraining.Blazor.Pages
         public async Task LoadList()
         {
             ListaReproduccion = await ApiClient.GetFromJsonAsync<List<PlayList>>("playlist");
+            ListaFavorita = await FavContext.VideosList.SelectAsync();
         }
 
         public async Task DeleteVideo(string id)
@@ -52,23 +57,26 @@ namespace CommunityTraining.Blazor.Pages
             }
         }
 
-        string Playing = "qeMFqkcPYcg";
-        bool ShowVideo;
-        void PlayVideo(string Video)
-        {
-            Playing = Helpers.Video.ExtraerId(Video);
-            Reproductor.PlayVideo();
-            ShowVideo = true;
-        }
         void EditVideo(string id)
         {
             Navigaton.NavigateTo($"video/{id}");
         }
 
-        void Cerrar()
+        bool IsFavorite(string id) =>
+            (ListaFavorita.Find(v => v.Id == id) is not null);
+
+        async Task SetFav(string id)
         {
-            ShowVideo = false;
-            Reproductor.StopVideo();
+            if (IsFavorite(id))
+            {
+                await FavContext.VideosList.DeleteAsync(id);
+            }
+            else 
+            {
+                await FavContext.VideosList.AddAsync(ListaReproduccion.Find(v => v.Id == id));
+            }
+            await LoadList();
+            StateHasChanged();
         }
     }
 }

@@ -1,37 +1,40 @@
 ﻿@page "/gallery"
 
+<div>
+    <a class="btn btn-info" href="/video">Agregar Video</a>
 
-@if (ShowVideo)
-{
-    <YoutubePlayer PlayerId="player" VideoId="@Playing" @ref="Reproductor" />
-    <button class="btn btn-warning" type="button" @onclick="Cerrar">Cerrar</button>
-}
-else
-{
-    <div>
-        <a class="btn btn-info" href="/video">Agregar Video</a>
-
-        @if (ListaReproduccion is null)
+    @if (ListaReproduccion is null)
+    {
+<div class="loading-dot">
+    <img src="images/CubeBlazorVine500.png" alt="loading" />
+</div>
+    }
+    else
+    {
+        foreach (PlayList item in ListaReproduccion)
         {
-            <p>Cargando...</p>
-        }
-        else
-        {
-            foreach (PlayList item in ListaReproduccion)
-            {
-                <div class="row">
-                    <div class="col">
-                        <h3>@item.Title</h3>
-                        <p>@item.Description</p>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-success" type="button" @onclick="() => PlayVideo(item.Id)">Reproducir</button>
-                        <button type="button" class="btn btn-warning" @onclick="() => EditVideo(item.Id)">Editar</button>
-                        <button type="button" class="btn btn-danger" @onclick="() => DeleteVideo(item.Id)">Eliminar</button>
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <h3>@item.Title</h3>
+                    <p>@item.Description</p>
                 </div>
-            }
+                <div class="col-3">                    
+                    <a class="btn btn-success" href="play/@item.Id"><i class="far fa-play-circle"></i></a>
+                    <button type="button" class="btn btn-info" @onclick="() => SetFav(item.Id)">
+                        @if (IsFavorite(item.Id))
+                        {
+                            <i class="fas fa-heart"></i>
+                        }
+                        else
+                        {
+                            <i class="far fa-heart"></i>
+                        }
+                    </button>
+                    <button type="button" class="btn btn-warning" @onclick="() => EditVideo(item.Id)"><i class="far fa-edit"></i></button>
+                    <button type="button" class="btn btn-danger" @onclick="() => DeleteVideo(item.Id)"><i class="far fa-trash-alt"></i></button>
+                </div>
+            </div>
         }
-    </div>
+    }
+</div>
 
-}

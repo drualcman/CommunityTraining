@@ -2,13 +2,11 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CommunityTraining.Blazor.Shared
 {
-    public partial class YoutubePlayer: IDisposable
+    public partial class YoutubePlayer : IDisposable
     {
         [Inject]
         public IJSRuntime JsRuntime { get; set; }
@@ -32,12 +30,10 @@ namespace CommunityTraining.Blazor.Shared
             actionPlayer = PlayerIsReady;
         }
 
-        private async void ApiIsLoaded()
+        private void ApiIsLoaded()
         {
             Console.WriteLine("ApiIsLoaded");
             IsApiLoad = true;
-            await JsRuntime.InvokeVoidAsync("youtubeApi.loadIFramePlayer");
-            StateHasChanged();
         }
 
         private async void PlayerIsReady()
@@ -59,14 +55,12 @@ namespace CommunityTraining.Blazor.Shared
         [JSInvokable]
         public static void ApiLoaded()
         {
-            Console.WriteLine("api loated");
             actionApi.Invoke();
         }
 
         [JSInvokable]
         public static void PlayerReady()
         {
-            Console.WriteLine("player ready");
             actionPlayer.Invoke();
         }
 
@@ -85,13 +79,15 @@ namespace CommunityTraining.Blazor.Shared
                 Url = Video
             };
             return Task.FromResult(playVideo);
-        }        
+        }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
             {
-                await JsRuntime.InvokeVoidAsync("youtubeApi.loadIFramePlayer");
+                string assembly = typeof(YoutubePlayer).Assembly.GetName().Name;
+                Console.WriteLine(assembly);
+                await JsRuntime.InvokeVoidAsync("youtubeApi.loadIFramePlayer", typeof(YoutubePlayer).Assembly.GetName().Name);
             }
         }
 

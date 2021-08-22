@@ -7,8 +7,9 @@
             <button type="button" class="btn btn-primary">Guardar</button>
         </div>
     </div>
+<button type="button" @onclick="LoadList" >Load</button>
 
-    <YoutubePlayer PlayerId="player" VideoId="@Playing"/>
+    <YoutubePlayer PlayerId="player" VideoId="@Playing" @ref="Reproductor" />
 
     <div>
         <input type="text"placeholder="URL o ID de video de YouTube" @bind="Video" />

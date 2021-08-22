@@ -19,7 +19,7 @@ namespace CommunityTraining.Blazor.Pages
         [Inject]
         public HttpClient ApiClient { get; set; }
 
-        private YoutubePlayer Reproductor = new YoutubePlayer();
+        protected YoutubePlayer Reproductor;
         public List<PlayList> ListaReproduccion;
         public string UserName = "Gest";
         public string Video;
@@ -32,12 +32,7 @@ namespace CommunityTraining.Blazor.Pages
 
         public async Task LoadList()
         {
-            HttpResponseMessage responseMessage = await ApiClient.GetAsync("playlist");
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                ListaReproduccion = await responseMessage.Content.ReadFromJsonAsync<List<PlayList>>();
-            }
-            else ListaReproduccion = new List<PlayList>();
+            ListaReproduccion = await ApiClient.GetFromJsonAsync<List<PlayList>>("playlist");            
         }
 
         public async Task AddVideo()

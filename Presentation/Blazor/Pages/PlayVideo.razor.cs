@@ -1,5 +1,5 @@
-﻿using CommunityTraining.Blazor.Shared;
-using CommunityTraining.Entities;
+﻿using CommunityTraining.Presentation.Blazor.Shared;
+using CommunityTraining.Domain.Entities;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Blazor.Pages
+namespace CommunityTraining.Presentation.Blazor.Pages
 {
     public partial class PlayVideo
     {

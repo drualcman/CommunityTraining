@@ -1,10 +1,10 @@
-﻿using CommunityTraining.Entities;
+﻿using CommunityTraining.Domain.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Blazor.Shared
+namespace CommunityTraining.Presentation.Blazor.Shared
 {
     public partial class YoutubePlayer : IDisposable
     {
@@ -83,7 +83,6 @@ namespace CommunityTraining.Blazor.Shared
         {
             if (firstRender)
             {
-                string assembly = typeof(YoutubePlayer).Assembly.GetName().Name;
                 await JsRuntime.InvokeVoidAsync("youtubeApi.loadIFramePlayer", typeof(YoutubePlayer).Assembly.GetName().Name);
             }
         }

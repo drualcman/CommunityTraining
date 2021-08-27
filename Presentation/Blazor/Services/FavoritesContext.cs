@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlazorIndexedDb.Configuration;
 using BlazorIndexedDb.Store;
-using CommunityTraining.Entities;
+using CommunityTraining.Domain.Entities;
 using Microsoft.JSInterop;
 
-namespace CommunityTraining.Blazor.Services
+namespace CommunityTraining.Presentation.Blazor.Services
 {
     public class FavoritesContext : StoreContext
     {

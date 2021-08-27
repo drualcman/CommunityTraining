@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\Entities\CommunityTraining.Entities.csproj" />
-    <ProjectReference Include="..\..\Domain\Interfaces\CommunityTraining.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Domain\Entities\CommunityTraining.Domain.Entities.csproj" />
+    <ProjectReference Include="..\..\Domain\Interfaces\CommunityTraining.Domain.Common.csproj" />
   </ItemGroup>
 
 </Project>

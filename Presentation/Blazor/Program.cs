@@ -1,4 +1,4 @@
-using CommunityTraining.Blazor.Services;
+using CommunityTraining.Presentation.Blazor.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Blazor
+namespace CommunityTraining.Presentation.Blazor
 {
     public class Program
     {

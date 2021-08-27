@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.CQRS.PlayLists.Commands
+namespace CommunityTraining.Application.CQRS.PlayLists.Commands
 {
     public class PlayListDeleteCommand : IRequest
     {

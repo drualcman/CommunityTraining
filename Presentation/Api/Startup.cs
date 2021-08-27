@@ -4,11 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MediatR;
-using CommunityTraining.CQRS.PlayLists.Commands;
-using CommunityTraining.Sql.EF;
-using CommunityTraining.CQRS;
+using CommunityTraining.Application.CQRS.PlayLists.Commands;
+using CommunityTraining.Applicatoin.SqlEF;
+using CommunityTraining.Application.CQRS;
+using CommunityTraining.Application.Common;
 
-namespace CommunityTraining.Api
+namespace CommunityTraining.Presentation.Api
 {
     public class Startup
     {
@@ -27,6 +28,7 @@ namespace CommunityTraining.Api
             services.ConfigureCQRSLayer();
             services.AddMediatR(typeof(PlayListDeleteCommand));
             services.AddControllersWithViews();
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddRazorPages();
         }
 

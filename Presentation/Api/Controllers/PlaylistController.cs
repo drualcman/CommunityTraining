@@ -1,7 +1,7 @@
-﻿using CommunityTraining.CQRS.PlayLists.Commands;
-using CommunityTraining.CQRS.PlayLists.Queries;
-using CommunityTraining.Entities;
-using CommunityTraining.Interfaces.Context;
+﻿using CommunityTraining.Application.CQRS.PlayLists.Commands;
+using CommunityTraining.Application.CQRS.PlayLists.Queries;
+using CommunityTraining.Domain.Entities;
+using CommunityTraining.Domain.Common.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Api.Controllers
+namespace CommunityTraining.Presentation.Api.Controllers
 {
     [Route("playlist")]
     [ApiController]

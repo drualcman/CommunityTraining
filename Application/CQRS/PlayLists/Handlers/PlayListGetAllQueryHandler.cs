@@ -1,6 +1,6 @@
-﻿using CommunityTraining.CQRS.PlayLists.Queries;
-using CommunityTraining.Entities;
-using CommunityTraining.Interfaces.Context;
+﻿using CommunityTraining.Application.CQRS.PlayLists.Queries;
+using CommunityTraining.Domain.Entities;
+using CommunityTraining.Domain.Common.Interfaces;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.CQRS.PlayLists.Handlers
+namespace CommunityTraining.Application.CQRS.PlayLists.Handlers
 {
     public class PlayListGetAllQueryHandler : IRequestHandler<PlayListGetAllQuery, IEnumerable<PlayList>>
     {

@@ -1,13 +1,13 @@
 ﻿using BlazorIndexedDb.Models;
-using CommunityTraining.Blazor.Services;
-using CommunityTraining.Entities;
+using CommunityTraining.Presentation.Blazor.Services;
+using CommunityTraining.Domain.Entities;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Blazor.Pages
+namespace CommunityTraining.Presentation.Blazor.Pages
 {
     public partial class Favorites
     {

@@ -1,6 +1,6 @@
-﻿using CommunityTraining.Blazor.Services;
-using CommunityTraining.Blazor.Shared;
-using CommunityTraining.Entities;
+﻿using CommunityTraining.Presentation.Blazor.Services;
+using CommunityTraining.Presentation.Blazor.Shared;
+using CommunityTraining.Domain.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Blazor.Pages
+namespace CommunityTraining.Presentation.Blazor.Pages
 {
     public partial class Index
     {

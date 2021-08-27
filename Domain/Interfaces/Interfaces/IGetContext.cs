@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Interfaces.Context
+namespace CommunityTraining.Domain.Common.Interfaces
 {
-    public interface IDeleteContext<TEntity>
+    public interface IGetContext<TEntity>
     {
-        Task Delete(string id);
+        Task<TEntity> Get(string id);
     }
 }

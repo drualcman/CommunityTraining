@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Interfaces.Context
+namespace CommunityTraining.Domain.Common.Interfaces
 {
-    public interface IGetContext<TEntity>
+    public interface IUpdateContext<TEntity>
     {
-        Task<TEntity> Get(string id);
+        Task Update(TEntity entity);
     }
 }

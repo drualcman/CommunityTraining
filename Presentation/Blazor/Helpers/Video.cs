@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace CommunityTraining.Blazor.Helpers
+namespace CommunityTraining.Presentation.Blazor.Helpers
 {
     public class Video
     {

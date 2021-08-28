@@ -1,4 +1,5 @@
-﻿using CommunityTraining.Domain.Entities;
+﻿using CommunityTraining.Domain.Common.Exceptions;
+using CommunityTraining.Domain.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
@@ -51,13 +52,24 @@ namespace CommunityTraining.Presentation.Blazor.Pages
             {
                 responseMessage = await ApiClient.PutAsJsonAsync("playlist", VideoEdit);
             }
-            if (responseMessage.IsSuccessStatusCode) Navigaton.NavigateTo("");
-            else await JsRuntime.InvokeVoidAsync("alert", "No se ha podido guardar el video");
+            if (responseMessage.IsSuccessStatusCode) Navigaton.NavigateTo("gallery");
+            else
+            {
+                try
+                {
+                    ProblemDetails details = await responseMessage.Content.ReadFromJsonAsync<ProblemDetails>();
+                    await JsRuntime.InvokeVoidAsync("alert", details.ToString());
+                }
+                catch (Exception ex)
+                {
+                    await JsRuntime.InvokeVoidAsync("alert", ex.Message);
+                }
+            }
         }
 
         void Cancel()
         {
-            Navigaton.NavigateTo("");
+            Navigaton.NavigateTo("gallery");
         }
     }
 }

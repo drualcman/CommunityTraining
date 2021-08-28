@@ -8,6 +8,14 @@ using CommunityTraining.Application.CQRS.PlayLists.Commands;
 using CommunityTraining.Applicatoin.SqlEF;
 using CommunityTraining.Application.CQRS;
 using CommunityTraining.Application.Common;
+using FluentValidation;
+using CommunityTraining.Application.CQRS.PlayLists.Validators;
+using CommunityTraining.Presentation.Api.Filters;
+using System.Collections.Generic;
+using System;
+using CommunityTraining.Presentation.Api.Filters.Handler;
+using CommunityTraining.Domain.Common.Exceptions;
+using FluentValidationWithCQRSDemo.Filters.Handler;
 
 namespace CommunityTraining.Presentation.Api
 {
@@ -26,9 +34,19 @@ namespace CommunityTraining.Presentation.Api
         {
             services.ConfigureEFLayer(Configuration);
             services.ConfigureCQRSLayer();
-            services.AddMediatR(typeof(PlayListDeleteCommand));
-            services.AddControllersWithViews();
+            services.AddValidatorsFromAssembly(typeof(PlayListUpdateCommandValidator).Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddControllersWithViews(options => 
+            {
+                options.Filters.Add(new ApiExceptionFilterAttribute(
+                        new Dictionary<Type, IExceptionHandler>()
+                        {
+                            { typeof(EntityNotFoundException), new EntityNotFoundExceptionHandler() },
+                            { typeof(GeneralException), new GeneralExceptionHandler() },
+                            { typeof(ValidationException), new ValidationExceptionHandler() }
+                        }
+                    ));
+            });
             services.AddRazorPages();
         }
 

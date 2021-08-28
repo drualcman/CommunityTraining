@@ -17,13 +17,15 @@ namespace FluentValidationWithCQRSDemo.Filters.Handler
         {
             ValidationException exception = context.Exception as ValidationException;
 
-            StringBuilder builder = new StringBuilder();
+            StringBuilder properties = new StringBuilder();
+            StringBuilder messages = new StringBuilder();
 
             foreach (ValidationFailure failure in exception.Errors)
             {
-                builder.AppendLine(string.Format("Propiedad: {0}. Error: {1}", failure.PropertyName, failure.ErrorMessage));
+                properties.Append($"{failure.PropertyName},");
+                messages.Append($"{failure.ErrorMessage},");
             }
-            return SetResult(context, StatusCodes.Status400BadRequest, "Erro en los datos de entrada", builder.ToString()).AsTask();
+            return SetResult(context, StatusCodes.Status422UnprocessableEntity, properties.ToString(), messages.ToString()).AsTask();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace CommunityTraining.Presentation.Api.Filters.Handler
         {
             { StatusCodes.Status404NotFound, "https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.4"},
             { StatusCodes.Status400BadRequest, "https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1"},
+            { StatusCodes.Status422UnprocessableEntity, "https://datatracker.ietf.org/doc/html/rfc2518#section-10.3"},
             { StatusCodes.Status500InternalServerError, "https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.1"}
         };
 

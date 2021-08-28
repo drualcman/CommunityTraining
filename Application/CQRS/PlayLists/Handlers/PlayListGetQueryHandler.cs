@@ -15,7 +15,17 @@ namespace CommunityTraining.Application.CQRS.PlayLists.Handlers
     {
         readonly IGetContext<PlayList> Context;
         public PlayListGetQueryHandler(IGetContext<PlayList> context) => Context = context;
-        public Task<PlayList> Handle(PlayListGetQuery command, CancellationToken cancellationToken) =>
-            Context.Get(command.Id);
+        public async Task<PlayList> Handle(PlayListGetQuery command, CancellationToken cancellationToken)
+        {
+            PlayList result =  await Context.Get(command.Id);
+            if (result is not null)
+            {
+                return result;
+            }
+            else
+            {
+                throw new Exception($"{nameof(command.Id)} Not found");
+            }
+        }
     }
 }

@@ -11,5 +11,8 @@ namespace CommunityTraining.Domain.Common.Exceptions
         public GeneralException(string message): base(message){ }
         public GeneralException(string message, Exception innerException) : base(message, innerException) { }
 
+        public override string ToString() =>
+            this.Message;
+
     }
 }

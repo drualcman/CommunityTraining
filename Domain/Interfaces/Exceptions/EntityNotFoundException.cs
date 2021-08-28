@@ -17,5 +17,7 @@ namespace CommunityTraining.Domain.Common.Exceptions
         public EntityNotFoundException(string entity, object key) =>
             (Entity, Key) = (entity, key);
 
+        public override string ToString() => 
+            $"{this.Entity}.{this.Key}: {this.Message}";
     }
 }

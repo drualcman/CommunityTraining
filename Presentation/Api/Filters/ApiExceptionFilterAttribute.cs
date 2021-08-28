@@ -28,7 +28,7 @@ namespace CommunityTraining.Presentation.Api.Filters
             {
                 // excepcions sin manejador
                 new ExceptionHandlerBase().SetResult(context, StatusCodes.Status500InternalServerError,
-                    "Ha ocurrido un error al procesar la respuesta");
+                    context.Exception.Message, context.Exception.InnerException?.Message);
             }
 
             base.OnException(context);

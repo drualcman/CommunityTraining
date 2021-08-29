@@ -14,5 +14,25 @@ namespace CommunityTraining.Domain.Entities
         public string Description { get; set; }
         public string Conferencer { get; set; }
         public string Ownner { get; set; }
+        public string Preview => Images[4];
+        public List<string> Images 
+        { 
+            get
+            {
+                //https://newbedev.com/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api
+                return new List<string>
+                {
+                    $"https://img.youtube.com/vi/{this.Id}/0.jpg",
+                    $"https://img.youtube.com/vi/{this.Id}/1.jpg",
+                    $"https://img.youtube.com/vi/{this.Id}/2.jpg",
+                    $"https://img.youtube.com/vi/{this.Id}/3.jpg",
+                    $"https://img.youtube.com/vi/{this.Id}/default.jpg",
+                    $"https://img.youtube.com/vi/{this.Id}/hqdefault.jpg",
+                    $"https://img.youtube.com/vi/{this.Id}/mqdefault.jpg",
+                    $"https://img.youtube.com/vi/{this.Id}/sddefault.jpg",
+                    $"https://img.youtube.com/vi/{this.Id}/maxresdefault.jpg",
+                };
+            }
+        }
     }
 }

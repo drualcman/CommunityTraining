@@ -36,22 +36,14 @@ namespace CommunityTraining.Presentation.Blazor.Pages
         {
             await FavContext.VideosList.DeleteAsync(id);
             ListaFavorita = await FavContext.VideosList.SelectAsync();
-            StateHasChanged();
+            //StateHasChanged();
         }
 
         async Task Guardar()
         {
-            try
-            {
-                await FavContext.VideosList.UpdateAsync(VideoEdit);
-            }
-            catch 
-            {
-
-            }
-           
+            CommandResponse response = await FavContext.VideosList.UpdateAsync(VideoEdit);
             IsShowingDetail = false;
-            StateHasChanged();
+            //StateHasChanged();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31612.314
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Presentation.Blazor", "Presentation\Blazor\CommunityTraining.Presentation.Blazor.csproj", "{58369E40-F1FA-43E0-A6E5-019B33A9F0BA}"
 EndProject
@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Domain.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Application.CQRS", "Application\CQRS\CommunityTraining.Application.CQRS.csproj", "{37B532AC-49FE-46FF-926C-C50325789052}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityTraining.Application.Common", "Application\CommunityTraining.Application.Common\CommunityTraining.Application.Common.csproj", "{1165A91C-5C1C-4845-8BAF-E2DC7817F4E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Application.Common", "Application\CommunityTraining.Application.Common\CommunityTraining.Application.Common.csproj", "{1165A91C-5C1C-4845-8BAF-E2DC7817F4E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

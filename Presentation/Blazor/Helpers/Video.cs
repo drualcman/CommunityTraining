@@ -9,6 +9,26 @@ namespace CommunityTraining.Presentation.Blazor.Helpers
 {
     public class Video
     {
+        public static string Preview(string id) => $"https://img.youtube.com/vi/{id}/maxresdefault.jpg";
+
+        //https://newbedev.com/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api
+        public static List<string> Images(string id)
+        {
+            return new List<string>
+                {
+                    $"https://img.youtube.com/vi/{id}/0.jpg",
+                    $"https://img.youtube.com/vi/{id}/1.jpg",
+                    $"https://img.youtube.com/vi/{id}/2.jpg",
+                    $"https://img.youtube.com/vi/{id}/3.jpg",
+                    $"https://img.youtube.com/vi/{id}/default.jpg",
+                    $"https://img.youtube.com/vi/{id}/hqdefault.jpg",
+                    $"https://img.youtube.com/vi/{id}/mqdefault.jpg",
+                    $"https://img.youtube.com/vi/{id}/sddefault.jpg",
+                    $"https://img.youtube.com/vi/{id}/maxresdefault.jpg",
+                };
+        
+        }
+    
 
         public static string ExtraerId(string Video)
         {

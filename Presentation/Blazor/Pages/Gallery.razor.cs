@@ -68,13 +68,23 @@ namespace CommunityTraining.Presentation.Blazor.Pages
 
         async Task SetFav(string id)
         {
+            CommandResponse response;
             if (IsFavorite(id))
             {
-                await FavContext.VideosList.DeleteAsync(id);
+                response = await FavContext.VideosList.DeleteAsync(id);
             }
             else 
             {
-                await FavContext.VideosList.AddAsync(ListaReproduccion.Find(v => v.Id == id));
+                response = await FavContext.VideosList.AddAsync(ListaReproduccion.Find(v => v.Id == id));
+            }
+            if (!response.Result)
+            {
+                string messages = string.Empty;
+                foreach (ResponseJsDb item in response.Response)
+                {
+                    messages += item.Message;
+                }
+                await JsRuntime.InvokeVoidAsync("alert", $"Error al manejar los favoritos: {messages}");
             }
             await LoadList();
             StateHasChanged();

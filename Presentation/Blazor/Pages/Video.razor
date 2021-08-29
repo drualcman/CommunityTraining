@@ -9,9 +9,11 @@
 }
 else
 {
-    <EditForm Model="VideoEdit" OnValidSubmit="Guardar" class="form-group">
-        <VideoEditor VideoEdit="VideoEdit" />
-        <button class="btn btn-primary">Guardar</button>
-        <button class="btn btn-secondary" type="button" @onclick="Cancel">Cancelar</button>        
-    </EditForm>
+<EditForm Model="VideoEdit" OnValidSubmit="Guardar" class="form-group">
+    <InputText class="form-control" placeholder="Url" @bind-Value="VideoEdit.Url" />
+    <InputText class="form-control" placeholder="Conferenciante" @bind-Value="VideoEdit.Conferencer" />
+    <VideoEditor VideoEdit="VideoEdit" />
+    <button class="btn btn-primary">Guardar</button>
+    <button class="btn btn-secondary" type="button" @onclick="Cancel">Cancelar</button>
+</EditForm>
 }

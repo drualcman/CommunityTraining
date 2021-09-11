@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Entities\CommunityTraining.Domain.Entities.csproj" />
+    <ProjectReference Include="..\..\Domain\Interfaces\CommunityTraining.Domain.Common.csproj" />
+    <ProjectReference Include="..\CommunityTraining.Application.Common\CommunityTraining.Application.Common.csproj" />
+    <ProjectReference Include="..\CQRS\CommunityTraining.Application.CQRS.csproj" />
+    <ProjectReference Include="..\Sql.DbContext\CommunityTraining.Applicatoin.SqlEF.csproj" />
+  </ItemGroup>
+
+</Project>

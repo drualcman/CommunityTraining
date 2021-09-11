@@ -3,19 +3,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MediatR;
-using CommunityTraining.Application.CQRS.PlayLists.Commands;
-using CommunityTraining.Applicatoin.SqlEF;
-using CommunityTraining.Application.CQRS;
-using CommunityTraining.Application.Common;
 using FluentValidation;
-using CommunityTraining.Application.CQRS.PlayLists.Validators;
 using CommunityTraining.Presentation.Api.Filters;
 using System.Collections.Generic;
 using System;
 using CommunityTraining.Presentation.Api.Filters.Handler;
 using CommunityTraining.Domain.Common.Exceptions;
 using FluentValidationWithCQRSDemo.Filters.Handler;
+using CommunityTraining.Application.InversionOfControl;
 
 namespace CommunityTraining.Presentation.Api
 {
@@ -32,10 +27,7 @@ namespace CommunityTraining.Presentation.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.ConfigureEFLayer(Configuration);
-            services.ConfigureCQRSLayer();
-            services.AddValidatorsFromAssembly(typeof(PlayListUpdateCommandValidator).Assembly);
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddServices(Configuration);
             services.AddControllersWithViews(options => 
             {
                 options.Filters.Add(new ApiExceptionFilterAttribute(

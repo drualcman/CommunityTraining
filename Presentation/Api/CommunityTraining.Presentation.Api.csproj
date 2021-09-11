@@ -5,20 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.9" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	  </PackageReference>
+
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application\CommunityTraining.Application.Common\CommunityTraining.Application.Common.csproj" />
-    <ProjectReference Include="..\..\Application\CQRS\CommunityTraining.Application.CQRS.csproj" />
-    <ProjectReference Include="..\..\Application\Sql.DbContext\CommunityTraining.Applicatoin.SqlEF.csproj" />
-    <ProjectReference Include="..\..\Domain\Entities\CommunityTraining.Domain.Entities.csproj" />
-    <ProjectReference Include="..\..\Domain\Interfaces\CommunityTraining.Domain.Common.csproj" />
+    <ProjectReference Include="..\..\Application\CommunityTraining.Application.InversionOfControl\CommunityTraining.Application.InversionOfControl.csproj" />
     <ProjectReference Include="..\Blazor\CommunityTraining.Presentation.Blazor.csproj" />
   </ItemGroup>
 

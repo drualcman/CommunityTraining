@@ -1,4 +1,4 @@
-﻿using CommunityTraining.Presentation.Api.Filters.Handler;
+﻿using CommunityTraining.Api.Filters.Handler;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Presentation.Api.Filters
+namespace CommunityTraining.Api.Filters
 {
     public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {

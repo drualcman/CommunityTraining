@@ -16,7 +16,7 @@
           "ASPNETCORE_ENVIRONMENT": "Development"
         }
       },
-      "CommunityTraining.Presentation.Api": {
+      "CommunityTraining.Api": {
         "commandName": "Project",
         "dotnetRunMessages": "true",
         "launchBrowser": true,

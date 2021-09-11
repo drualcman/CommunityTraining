@@ -4,15 +4,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FluentValidation;
-using CommunityTraining.Presentation.Api.Filters;
+using CommunityTraining.Api.Filters;
 using System.Collections.Generic;
 using System;
-using CommunityTraining.Presentation.Api.Filters.Handler;
+using CommunityTraining.Api.Filters.Handler;
 using CommunityTraining.Domain.Common.Exceptions;
 using FluentValidationWithCQRSDemo.Filters.Handler;
 using CommunityTraining.Application.InversionOfControl;
 
-namespace CommunityTraining.Presentation.Api
+namespace CommunityTraining.Api
 {
     public class Startup
     {

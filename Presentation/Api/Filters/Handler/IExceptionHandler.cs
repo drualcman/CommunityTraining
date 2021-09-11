@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Presentation.Api.Filters.Handler
+namespace CommunityTraining.Api.Filters.Handler
 {
     public interface IExceptionHandler
     {

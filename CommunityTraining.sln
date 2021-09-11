@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Presentation.Blazor", "Presentation\Blazor\CommunityTraining.Presentation.Blazor.csproj", "{58369E40-F1FA-43E0-A6E5-019B33A9F0BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Presentation.Api", "Presentation\Api\CommunityTraining.Presentation.Api.csproj", "{16B0FDA1-4EC3-48A6-ADAB-6722E8B84900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Api", "Presentation\Api\CommunityTraining.Api.csproj", "{16B0FDA1-4EC3-48A6-ADAB-6722E8B84900}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Domain.Entities", "Domain\Entities\CommunityTraining.Domain.Entities.csproj", "{901F274D-388A-4B21-A163-CC86C7614EB5}"
 EndProject
@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Applicati
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface Adapters", "Interface Adapters", "{B1F474E1-D7A1-4B5A-83EC-906085B4E9AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityTraining.Application.InversionOfControl", "Application\CommunityTraining.Application.InversionOfControl\CommunityTraining.Application.InversionOfControl.csproj", "{A06DB1D5-041A-4347-A2DC-F171415A7D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Application.InversionOfControl", "Application\CommunityTraining.Application.InversionOfControl\CommunityTraining.Application.InversionOfControl.csproj", "{A06DB1D5-041A-4347-A2DC-F171415A7D8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

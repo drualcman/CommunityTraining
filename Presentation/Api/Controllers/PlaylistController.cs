@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Presentation.Api.Controllers
+namespace CommunityTraining.Api.Controllers
 {
     [Route("playlist")]
     [ApiController]

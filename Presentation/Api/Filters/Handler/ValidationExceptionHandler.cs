@@ -1,4 +1,4 @@
-﻿using CommunityTraining.Presentation.Api.Filters.Handler;
+﻿using CommunityTraining.Api.Filters.Handler;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;

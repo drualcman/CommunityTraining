@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Presentation.Api
+namespace CommunityTraining.Api
 {
     public class Program
     {

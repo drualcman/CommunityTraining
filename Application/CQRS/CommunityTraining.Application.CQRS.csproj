@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\Entities\CommunityTraining.Domain.Entities.csproj" />
-    <ProjectReference Include="..\..\Domain\Interfaces\CommunityTraining.Domain.Common.csproj" />
+    <ProjectReference Include="..\..\Domain\Entities\CommunityTraining.Entities.csproj" />
+    <ProjectReference Include="..\..\Domain\Interfaces\CommunityTraining.Common.csproj" />
   </ItemGroup>
 
 </Project>

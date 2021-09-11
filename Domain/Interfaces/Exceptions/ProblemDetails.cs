@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Domain.Common.Exceptions
+namespace CommunityTraining.Common.Exceptions
 {
     public class ProblemDetails
     {

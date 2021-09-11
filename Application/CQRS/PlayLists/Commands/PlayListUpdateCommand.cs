@@ -1,4 +1,4 @@
-﻿using CommunityTraining.Domain.Entities;
+﻿using CommunityTraining.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;

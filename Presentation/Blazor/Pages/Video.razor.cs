@@ -1,5 +1,5 @@
-﻿using CommunityTraining.Domain.Common.Exceptions;
-using CommunityTraining.Domain.Entities;
+﻿using CommunityTraining.Common.Exceptions;
+using CommunityTraining.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;

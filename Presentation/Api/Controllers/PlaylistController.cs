@@ -1,7 +1,7 @@
 ﻿using CommunityTraining.Application.CQRS.PlayLists.Commands;
 using CommunityTraining.Application.CQRS.PlayLists.Queries;
-using CommunityTraining.Domain.Entities;
-using CommunityTraining.Domain.Common.Interfaces;
+using CommunityTraining.Entities;
+using CommunityTraining.Common.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

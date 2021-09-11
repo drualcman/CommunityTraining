@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CommunityTraining.Applicatoin.SqlEF.Migrations
+namespace CommunityTraining.SqlEF.Migrations
 {
     public partial class InitialCreate : Migration
     {

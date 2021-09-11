@@ -1,5 +1,5 @@
 ﻿using CommunityTraining.Presentation.Blazor.Shared;
-using CommunityTraining.Domain.Entities;
+using CommunityTraining.Entities;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Domain.Common.Exceptions
+namespace CommunityTraining.Common.Exceptions
 {
     public class EntityNotFoundException : Exception
     {

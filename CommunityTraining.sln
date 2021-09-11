@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Presentat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Api", "Presentation\Api\CommunityTraining.Api.csproj", "{16B0FDA1-4EC3-48A6-ADAB-6722E8B84900}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Domain.Entities", "Domain\Entities\CommunityTraining.Domain.Entities.csproj", "{901F274D-388A-4B21-A163-CC86C7614EB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Entities", "Domain\Entities\CommunityTraining.Entities.csproj", "{901F274D-388A-4B21-A163-CC86C7614EB5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enterprise Business Rules", "Enterprise Business Rules", "{FEE0414D-415B-40A1-B112-A24EA726F226}"
 EndProject
@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Business Rules", "Application Business Rules", "{DEE4B7AE-75A3-4B77-AB5C-81E63FBD9DF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Applicatoin.SqlEF", "Application\Sql.DbContext\CommunityTraining.Applicatoin.SqlEF.csproj", "{791973B7-3C9C-4A02-AD41-0961355C0433}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.SqlEF", "Application\Sql.DbContext\CommunityTraining.SqlEF.csproj", "{791973B7-3C9C-4A02-AD41-0961355C0433}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Domain.Common", "Domain\Interfaces\CommunityTraining.Domain.Common.csproj", "{2B78198A-8E88-4AEB-867A-0C4B9A30459D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Common", "Domain\Interfaces\CommunityTraining.Common.csproj", "{2B78198A-8E88-4AEB-867A-0C4B9A30459D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Application.CQRS", "Application\CQRS\CommunityTraining.Application.CQRS.csproj", "{37B532AC-49FE-46FF-926C-C50325789052}"
 EndProject

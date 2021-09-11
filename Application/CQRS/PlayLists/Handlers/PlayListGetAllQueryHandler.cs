@@ -1,6 +1,6 @@
 ﻿using CommunityTraining.Application.CQRS.PlayLists.Queries;
-using CommunityTraining.Domain.Entities;
-using CommunityTraining.Domain.Common.Interfaces;
+using CommunityTraining.Entities;
+using CommunityTraining.Common.Interfaces;
 using MediatR;
 using System;
 using System.Collections.Generic;

@@ -1,7 +1,7 @@
 ﻿using CommunityTraining.Application.Common;
 using CommunityTraining.Application.CQRS;
 using CommunityTraining.Application.CQRS.PlayLists.Validators;
-using CommunityTraining.Applicatoin.SqlEF;
+using CommunityTraining.SqlEF;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;

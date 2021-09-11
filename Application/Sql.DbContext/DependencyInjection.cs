@@ -1,5 +1,5 @@
-﻿using CommunityTraining.Domain.Common.Interfaces;
-using CommunityTraining.Domain.Entities;
+﻿using CommunityTraining.Common.Interfaces;
+using CommunityTraining.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Applicatoin.SqlEF
+namespace CommunityTraining.SqlEF
 {
     public static class DependencyInjection
     {

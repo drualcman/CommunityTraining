@@ -1,5 +1,5 @@
-﻿using CommunityTraining.Domain.Entities;
-using CommunityTraining.Domain.Common.Interfaces;
+﻿using CommunityTraining.Entities;
+using CommunityTraining.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Applicatoin.SqlEF
+namespace CommunityTraining.SqlEF
 {
     public  class PlayListDbContext : DbContext
     {

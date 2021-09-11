@@ -1,12 +1,12 @@
-﻿using CommunityTraining.Domain.Entities;
-using CommunityTraining.Domain.Common.Interfaces;
+﻿using CommunityTraining.Entities;
+using CommunityTraining.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Applicatoin.SqlEF
+namespace CommunityTraining.SqlEF
 {
     public class PlayListRepositoryEF  : 
             IAddContext<PlayList> , 

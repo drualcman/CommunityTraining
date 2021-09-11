@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Domain.Entities
+namespace CommunityTraining.Entities
 {
     public class PlayList
     {

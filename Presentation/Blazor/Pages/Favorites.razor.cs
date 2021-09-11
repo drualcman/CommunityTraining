@@ -1,6 +1,6 @@
 ﻿using BlazorIndexedDb.Models;
 using CommunityTraining.Presentation.Blazor.Services;
-using CommunityTraining.Domain.Entities;
+using CommunityTraining.Entities;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;

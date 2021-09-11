@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlazorIndexedDb.Configuration;
 using BlazorIndexedDb.Store;
-using CommunityTraining.Domain.Entities;
+using CommunityTraining.Entities;
 using Microsoft.JSInterop;
 
 namespace CommunityTraining.Presentation.Blazor.Services

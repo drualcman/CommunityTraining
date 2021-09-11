@@ -1,4 +1,4 @@
-﻿using CommunityTraining.Domain.Common.Exceptions;
+﻿using CommunityTraining.Common.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;

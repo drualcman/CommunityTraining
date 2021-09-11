@@ -8,7 +8,7 @@ using CommunityTraining.Api.Filters;
 using System.Collections.Generic;
 using System;
 using CommunityTraining.Api.Filters.Handler;
-using CommunityTraining.Domain.Common.Exceptions;
+using CommunityTraining.Common.Exceptions;
 using FluentValidationWithCQRSDemo.Filters.Handler;
 using CommunityTraining.Application.InversionOfControl;
 

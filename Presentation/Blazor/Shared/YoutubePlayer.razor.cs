@@ -1,4 +1,4 @@
-﻿using CommunityTraining.Domain.Entities;
+﻿using CommunityTraining.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;

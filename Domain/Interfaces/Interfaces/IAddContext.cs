@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace CommunityTraining.Domain.Common.Interfaces
+namespace CommunityTraining.Common.Interfaces
 {
     public interface IAddContext<TEntity>
     {

@@ -1,4 +1,5 @@
 ﻿using CommunityTraining.Domain.Common.Interfaces;
+using CommunityTraining.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,11 +20,11 @@ namespace CommunityTraining.Applicatoin.SqlEF
             services.AddDbContext<PlayListDbContext>(options => 
                 options.UseSqlServer(configuration.GetConnectionString("Default")));
             //add interfaces to manage the inverse injection
-            services.AddScoped(typeof(IAddContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IUpdateContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IDeleteContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IGetAllContext<>), typeof(RepositoryEF<>));
-            services.AddScoped(typeof(IGetContext<>), typeof(RepositoryEF<>));
+            services.AddScoped(typeof(IAddContext<PlayList>), typeof(PlayListRepositoryEF));
+            services.AddScoped(typeof(IUpdateContext<PlayList>), typeof(PlayListRepositoryEF));
+            services.AddScoped(typeof(IDeleteContext<PlayList>), typeof(PlayListRepositoryEF));
+            services.AddScoped(typeof(IGetAllContext<PlayList>), typeof(PlayListRepositoryEF));
+            services.AddScoped(typeof(IGetContext<PlayList>), typeof(PlayListRepositoryEF));
         }
     }
 }

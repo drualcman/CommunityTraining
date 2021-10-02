@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CommunityTraining.Application.InversionOfControl\CommunityTraining.Application.InversionOfControl.csproj" />
+    <ProjectReference Include="..\CommunityTraining.Interfaces.Controllers\CommunityTraining.Interfaces.Controllers.csproj" />
     <ProjectReference Include="..\CommunityTraining.Presentation.Blazor\CommunityTraining.Presentation.Blazor.csproj" />
   </ItemGroup>
 

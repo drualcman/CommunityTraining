@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\CommunityTraining.Application.Ports\CommunityTraining.Application.Ports.csproj" />
+	  <ProjectReference Include="..\CommunityTraining.Application.UseCases\CommunityTraining.Application.UseCases.csproj" />
+	  <ProjectReference Include="..\CommunityTraining.Entities\CommunityTraining.Entities.csproj" />
+	  <ProjectReference Include="..\CommunityTraining.Interfaces.Presenters\CommunityTraining.Interfaces.Presenters.csproj" />
+	</ItemGroup>
+</Project>

@@ -17,14 +17,14 @@ namespace CommunityTraining.Application.InversionOfControl
         {
             services.ConfigureEFLayer(configuration);
             services.AddValidatorsFromAssembly(typeof(VideoValidator).Assembly);
-            services.AddScoped<IAddVideoInputPort, AddVideoInteractor>();
-            services.AddScoped<IUpdateVideoInputPort, UpdateVideoInteractor>();
-            services.AddScoped<IGetVideoInputPort, GetVideoInteractor>();
-            services.AddScoped<IAllVideoInputPort, AllVideoInteractor>();
-            services.AddScoped<IAllVideoOutputPort, AllVideoPresenter>();
-            services.AddScoped<IEditVideoOutputPort, EditVideoPresenter>();
-            services.AddScoped<IDeleteVideoInputPort, DeleteVideoInteractor>();
-            services.AddScoped<IDeleteVideoOutputPort, DeleteVideoPresenter>();
+            services.AddTransient<IAddVideoInputPort, AddVideoInteractor>();
+            services.AddTransient<IUpdateVideoInputPort, UpdateVideoInteractor>();
+            services.AddTransient<IGetVideoInputPort, GetVideoInteractor>();
+            services.AddTransient<IAllVideoInputPort, AllVideoInteractor>();
+            services.AddTransient<IAllVideoOutputPort, AllVideoPresenter>();
+            services.AddTransient<IEditVideoOutputPort, EditVideoPresenter>();
+            services.AddTransient<IDeleteVideoInputPort, DeleteVideoInteractor>();
+            services.AddTransient<IDeleteVideoOutputPort, DeleteVideoPresenter>();
         }
     }
 }

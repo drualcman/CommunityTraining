@@ -1,5 +1,4 @@
-﻿using CommunityTraining.Presentation.Blazor.Services;
-using CommunityTraining.Presentation.Blazor.Shared;
+﻿using CommunityTraining.Presentation.Blazor.Shared;
 using CommunityTraining.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;

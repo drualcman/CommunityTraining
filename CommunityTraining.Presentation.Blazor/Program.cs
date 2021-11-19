@@ -1,4 +1,6 @@
-using CommunityTraining.Presentation.Blazor.Services;
+using CommunityTraining.Entities;
+using CommunityTraining.Entities.Interfaces;
+using CommunityTraining.IndexedDb;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +21,7 @@ namespace CommunityTraining.Presentation.Blazor
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-            builder.Services.AddScoped<FavoritesContext>();
+            builder.Services.AddScoped<ILocalRepository, FavoritesLocalRepository>();
 
             await builder.Build().RunAsync();
         }

@@ -11,9 +11,9 @@ namespace CommunityTraining.Application.InversionOfControl
     {
         public static void AddPresenters(this IServiceCollection services)
         {
-            services.AddTransient<IAllVideoOutputPort, AllVideoPresenter>();
-            services.AddTransient<IEditVideoOutputPort, EditVideoPresenter>();
-            services.AddTransient<IDeleteVideoOutputPort, DeleteVideoPresenter>();
+            services.AddScoped<IAllVideoOutputPort, AllVideoPresenter>();
+            services.AddScoped<IEditVideoOutputPort, EditVideoPresenter>();
+            services.AddScoped<IDeleteVideoOutputPort, DeleteVideoPresenter>();
         }
     }
 }

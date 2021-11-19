@@ -1,6 +1,4 @@
-﻿using CommunityTraining.Presentation.Blazor.Services;
-using CommunityTraining.Presentation.Blazor.Shared;
-using CommunityTraining.Entities;
+﻿using CommunityTraining.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
@@ -9,7 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using BlazorIndexedDb.Models;
+using CommunityTraining.Entities.Interfaces;
 
 namespace CommunityTraining.Presentation.Blazor.Pages
 {
@@ -25,7 +23,7 @@ namespace CommunityTraining.Presentation.Blazor.Pages
         public NavigationManager Navigaton { get; set; }
 
         [Inject]
-        public FavoritesContext FavContext { get; set; }
+        public ILocalRepository FavContext { get; set; }
 
         public List<PlayList> ListaReproduccion;
         public List<PlayList> ListaFavorita;
@@ -39,7 +37,7 @@ namespace CommunityTraining.Presentation.Blazor.Pages
         public async Task LoadList()
         {
             ListaReproduccion = await ApiClient.GetFromJsonAsync<List<PlayList>>("playlist");
-            ListaFavorita = await FavContext.VideosList.SelectAsync();
+            ListaFavorita = await FavContext.GetAll();
         }
 
         public async Task DeleteVideo(string id)
@@ -68,24 +66,14 @@ namespace CommunityTraining.Presentation.Blazor.Pages
 
         async Task SetFav(string id)
         {
-            CommandResponse response;
             if (IsFavorite(id))
             {
-                response = await FavContext.VideosList.DeleteAsync(id);
+                await FavContext.DeleteVideo(id);
             }
             else 
             {
-                response = await FavContext.VideosList.AddAsync(ListaReproduccion.Find(v => v.Id == id));
-            }
-            if (!response.Result)
-            {
-                string messages = string.Empty;
-                foreach (ResponseJsDb item in response.Response)
-                {
-                    messages += item.Message;
-                }
-                await JsRuntime.InvokeVoidAsync("alert", $"Error al manejar los favoritos: {messages}");
-            }
+                await FavContext.AddVideo(ListaReproduccion.Find(v => v.Id == id));
+            }           
             await LoadList();
             StateHasChanged();
         }

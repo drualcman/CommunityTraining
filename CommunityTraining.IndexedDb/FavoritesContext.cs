@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BlazorIndexedDb.Configuration;
+﻿using BlazorIndexedDb.Configuration;
 using BlazorIndexedDb.Store;
 using CommunityTraining.Entities;
 using Microsoft.JSInterop;
+using System;
 
-namespace CommunityTraining.Presentation.Blazor.Services
+namespace CommunityTraining.IndexedDb
 {
     public class FavoritesContext : StoreContext
     {

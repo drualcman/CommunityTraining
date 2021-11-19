@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31624.102
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Presentation.Blazor", "CommunityTraining.Presentation.Blazor\CommunityTraining.Presentation.Blazor.csproj", "{58369E40-F1FA-43E0-A6E5-019B33A9F0BA}"
 EndProject
@@ -21,9 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface Adapters", "Inter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Application.InversionOfControl", "CommunityTraining.Application.InversionOfControl\CommunityTraining.Application.InversionOfControl.csproj", "{A06DB1D5-041A-4347-A2DC-F171415A7D8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityTraining.Application.Ports", "CommunityTraining.Application.Ports\CommunityTraining.Application.Ports.csproj", "{41863B43-2FF3-4E11-A8ED-6A972F2C0C17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Application.Ports", "CommunityTraining.Application.Ports\CommunityTraining.Application.Ports.csproj", "{41863B43-2FF3-4E11-A8ED-6A972F2C0C17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityTraining.Application.UseCases", "CommunityTraining.Application.UseCases\CommunityTraining.Application.UseCases.csproj", "{7D90C77A-22C0-48EE-833B-183FCBA50481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Application.UseCases", "CommunityTraining.Application.UseCases\CommunityTraining.Application.UseCases.csproj", "{7D90C77A-22C0-48EE-833B-183FCBA50481}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{4C0D1DCC-B95B-4682-B465-C0C7B7B5332C}"
 EndProject
@@ -33,9 +33,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{835DD26A-0AE7-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controllers", "Controllers", "{0446F634-9DE9-480D-AE5E-FD1EB3FB35FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityTraining.Interfaces.Controllers", "CommunityTraining.Interfaces.Controllers\CommunityTraining.Interfaces.Controllers.csproj", "{096A80FD-D1BE-4528-BA98-94870CF83712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Interfaces.Controllers", "CommunityTraining.Interfaces.Controllers\CommunityTraining.Interfaces.Controllers.csproj", "{096A80FD-D1BE-4528-BA98-94870CF83712}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityTraining.Interfaces.Presenters", "CommunityTraining.Interfaces.Presenters\CommunityTraining.Interfaces.Presenters.csproj", "{79F9AFC8-6FC5-4EE9-B137-5F633F620CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunityTraining.Interfaces.Presenters", "CommunityTraining.Interfaces.Presenters\CommunityTraining.Interfaces.Presenters.csproj", "{79F9AFC8-6FC5-4EE9-B137-5F633F620CCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBases", "DataBases", "{AE5C35CC-9673-4354-85D0-1623FEF4F424}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorIndexedDb", "..\..\..\..\..\DrUalcman\BlasorIndexedDb\BlasorIndexedDb\BlazorIndexedDb.csproj", "{4097B361-4FEA-4764-8B1A-E4F6BF4D06E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityTraining.IndexedDb", "CommunityTraining.IndexedDb\CommunityTraining.IndexedDb.csproj", "{1A03DB44-BD7B-4956-882F-9CC8CAAD2E60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +85,14 @@ Global
 		{79F9AFC8-6FC5-4EE9-B137-5F633F620CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F9AFC8-6FC5-4EE9-B137-5F633F620CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79F9AFC8-6FC5-4EE9-B137-5F633F620CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4097B361-4FEA-4764-8B1A-E4F6BF4D06E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4097B361-4FEA-4764-8B1A-E4F6BF4D06E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4097B361-4FEA-4764-8B1A-E4F6BF4D06E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4097B361-4FEA-4764-8B1A-E4F6BF4D06E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A03DB44-BD7B-4956-882F-9CC8CAAD2E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A03DB44-BD7B-4956-882F-9CC8CAAD2E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A03DB44-BD7B-4956-882F-9CC8CAAD2E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A03DB44-BD7B-4956-882F-9CC8CAAD2E60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +111,9 @@ Global
 		{0446F634-9DE9-480D-AE5E-FD1EB3FB35FB} = {B1F474E1-D7A1-4B5A-83EC-906085B4E9AB}
 		{096A80FD-D1BE-4528-BA98-94870CF83712} = {0446F634-9DE9-480D-AE5E-FD1EB3FB35FB}
 		{79F9AFC8-6FC5-4EE9-B137-5F633F620CCB} = {F82BCA9F-1B70-49CE-BC4F-1E3A079FDFEF}
+		{AE5C35CC-9673-4354-85D0-1623FEF4F424} = {BB16D228-B2D8-40B4-9458-4E9F6C34230C}
+		{4097B361-4FEA-4764-8B1A-E4F6BF4D06E3} = {AE5C35CC-9673-4354-85D0-1623FEF4F424}
+		{1A03DB44-BD7B-4956-882F-9CC8CAAD2E60} = {4C0D1DCC-B95B-4682-B465-C0C7B7B5332C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F8F1272-7239-4CC1-938A-B9332D47F259}

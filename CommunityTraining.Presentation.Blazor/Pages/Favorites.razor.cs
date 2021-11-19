@@ -1,12 +1,11 @@
-﻿using BlazorIndexedDb.Models;
-using CommunityTraining.Presentation.Blazor.Services;
-using CommunityTraining.Entities;
+﻿using CommunityTraining.Entities;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
+using CommunityTraining.Entities.Interfaces;
 
 namespace CommunityTraining.Presentation.Blazor.Pages
 {
@@ -16,7 +15,7 @@ namespace CommunityTraining.Presentation.Blazor.Pages
         public IJSRuntime JsRuntime { get; set; }
 
         [Inject]
-        public FavoritesContext FavContext { get; set; }
+        public ILocalRepository FavContext { get; set; }
 
         [Inject]
         public NavigationManager Navigaton { get; set; }
@@ -27,7 +26,7 @@ namespace CommunityTraining.Presentation.Blazor.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            ListaFavorita = await FavContext.VideosList.SelectAsync();
+            ListaFavorita = await FavContext.GetAll();
         }
 
         void EditVideo(string id)
@@ -38,32 +37,14 @@ namespace CommunityTraining.Presentation.Blazor.Pages
 
         public async Task DeleteVideo(string id)
         {
-            CommandResponse response = await FavContext.VideosList.DeleteAsync(id);
-            if (!response.Result)
-            {
-                string messages = response.Message;
-                foreach (ResponseJsDb item in response.Response)
-                {
-                    messages += item.Message;
-                }
-                await JsRuntime.InvokeVoidAsync("alert", $"Error eliminar de favoritos: {messages}");
-            }
-            ListaFavorita = await FavContext.VideosList.SelectAsync();
+            await FavContext.DeleteVideo(id);
+            ListaFavorita = await FavContext.GetAll();
             //StateHasChanged();
         }
 
         async Task Guardar()
         {
-            CommandResponse response = await FavContext.VideosList.UpdateAsync(VideoEdit);
-            if (!response.Result)
-            {
-                string messages = string.Empty;
-                foreach (ResponseJsDb item in response.Response)
-                {
-                    messages += item.Message;
-                }
-                await JsRuntime.InvokeVoidAsync("alert", $"Error al manejar los favoritos: {messages}");
-            }
+            await FavContext.UpdateVideo(VideoEdit);
             IsShowingDetail = false;
             //StateHasChanged();
         }
